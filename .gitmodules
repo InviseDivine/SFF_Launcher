@@ -19,3 +19,6 @@
 [submodule "libs/stb"]
 	path = libs/stb
 	url = https://github.com/nothings/stb.git
+[submodule "libs/openssl-c"]
+	path = libs/openssl-c
+	url = https://github.com/viaduck/openssl-cmake.git

@@ -10,7 +10,7 @@ file(GLOB SOURCES
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-add_subdirectory(libs/openssl-cmake ${CMAKE_CURRENT_BINARY_DIR}/libs/openssl-cmake)
+add_subdirectory(libs/openssl-c ${CMAKE_CURRENT_BINARY_DIR}/libs/openssl-c)
 
 add_library(OpenSSL::SSL STATIC IMPORTED)
 add_library(OpenSSL::Crypto STATIC IMPORTED)
@@ -57,7 +57,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     "libs/stb/"
     "libs/curl/include/"
     "libs/curl/include/"
-    "include/openssl-cmake"
+    "include/openssl-c"
     "libs/bit7z"
     ${GL_INCLUDES}
 )

@@ -102,21 +102,31 @@ void SFFLauncher::render() {
     // свитч всех кнопок
     switch (currentButton) {
     case 1:
-
+        pushInvisibleStyle();
+        ImGui::PushFont(bold);
         std::filesystem::create_directory("Games/");
+        ImGui::SetCursorPos({0, 68});
         if (ImGui::Button("Escape From Amina 2.0")) {
             currentGame = 1;
         }
+        ImGui::PopStyleColor(3);
+        ImGui::PopFont();
         // свитч игр
         switch (currentGame)
         {
         case 1:
+            ImGui::SetCursorPos({559,538});
+            pushInvisibleStyle();
+            ImGui::PushFont(regular);
 
             if (!std::filesystem::exists("Games/EscapeFromAmina2.0/Escape from Amina.exe")) {
+
                 if (ImGui::Button("Скачать")) {
+
                     download(url, path);
                     extractor.extract("Games/EFA20.7z", "Games/EscapeFromAmina2.0/");
                     remove("Games/EFA20.7z");
+
                 }
             }
             else {
@@ -124,16 +134,10 @@ void SFFLauncher::render() {
                     system("\"Games\\EscapeFromAmina2.0\\Escape From Amina.exe\"");
                 }
             }
+            ImGui::PopStyleColor(3);
+            ImGui::PopFont();
             break;
         }
-        // std::filesystem::create_directory("Games/EscapeFromAmina2.0");
-        // if(ImGui::Button("test11")) {
-        //     system("\"Games\\EscapeFromAmina2.0\\Escape From Amina.exe\"");
-        // }
-        // if(ImGui::Button("test2") && !std::filesystem::exists("Games/EscapeFromAmina2.0/Escape from Amina.exe")) {
-        // download(url,path);
-        // extractor.extract("Games/EFA20.7z", "Games/EscapeFromAmina2.0/" );
-        // }
 
         break;
 

@@ -74,9 +74,10 @@ int main(int, char**)
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
-    regular = io.Fonts->AddFontFromMemoryCompressedBase85TTF(InterRegular, 20, NULL, io.Fonts->GetGlyphRangesCyrillic());
+    regular = io.Fonts->AddFontFromMemoryCompressedBase85TTF(InterRegular, 50, NULL, io.Fonts->GetGlyphRangesCyrillic());
     bold = io.Fonts->AddFontFromMemoryCompressedBase85TTF(InterBold, 20, NULL, io.Fonts->GetGlyphRangesCyrillic());
     bigBold = io.Fonts->AddFontFromMemoryCompressedBase85TTF(InterBold, 30, NULL, io.Fonts->GetGlyphRangesCyrillic());
+    
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 

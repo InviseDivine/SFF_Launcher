@@ -15,7 +15,7 @@
 #include <bit7z/bitfileextractor.hpp>
 int x, y, w, h, xx, yy;
 
-GLuint bg, button, line, games, kolyah35, invisedivine;
+GLuint bg, lineg, button, line, games, kolyah35, invisedivine;
 ImVec2 iconSize = ImVec2(84, 60);
 ImVec2 lineSize = ImVec2(1280, 1);
 ImVec2 gamesSize = ImVec2(59, 23);
@@ -45,6 +45,7 @@ void SFFLauncher::init() {
     style.WindowPadding = {0, 0};
     LoadTextureFromFile("Resources/icon.png", &bg, &x, &y);
     LoadTextureFromFile("Resources/line.png", &line, &w, &h);
+    LoadTextureFromFile("Resources/linegradient.png", &lineg, &x, &y);
     LoadTextureFromFile("Resources/Kolyah35.png", &kolyah35, &w, &h);
     LoadTextureFromFile("Resources/InviseDivine.png", &invisedivine, &w, &h);
 }
@@ -101,11 +102,14 @@ void SFFLauncher::render() {
     ImGui::PopFont();
     // свитч всех кнопок
     switch (currentButton) {
+    
     case 1:
+    ImGui::SetCursorPos({0, 84});
+    ImGui::Image((void *)(uintptr_t)lineg, lineSize);
         pushInvisibleStyle();
         ImGui::PushFont(bold);
         std::filesystem::create_directory("Games/");
-        ImGui::SetCursorPos({0, 68});
+        ImGui::SetCursorPos({0, 60});
         if (ImGui::Button("Escape From Amina 2.0")) {
             currentGame = 1;
         }
@@ -167,7 +171,7 @@ void SFFLauncher::render() {
         ImGui::SetCursorPos({161, 325});
         ImGui::Text("Kolyah35 - помощь в создании лаунчера");
         ImGui::SetCursorPos({891, 106});
-        ImGui::Text(" Отдельное спасибо:\n CITRIM \n Jaan \n mixvy (Амина) \n FullHarmony(_Sycorax_) \n njuyse \n Karbafosus \n Festr \n Nixonit \n Весь SFF");
+        ImGui::Text(" Отдельное спасибо:\n CITRIM \n Jaan \n mixvy (Амина) \n FullHarmony(_Sycorax_) \n njuyse \n Karbafosus \n Festr \n Nixonit \n astro \n Весь SFF");
         ImGui::PopFont();
         break;
     };

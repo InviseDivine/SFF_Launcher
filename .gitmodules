@@ -1,3 +1,21 @@
 [submodule "libs/curl"]
 	path = libs/curl
 	url = https://github.com/curl/curl.git
+[submodule "libs/bit7z"]
+	path = libs/bit7z
+	url = https://github.com/rikyoz/bit7z.git
+[submodule "libs/glew"]
+	path = libs/glew
+	url = https://github.com/nigels-com/glew.git
+[submodule "libs/glfw"]
+	path = libs/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "libs/imgui"]
+	path = libs/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "libs/openssl-cmake"]
+	path = libs/openssl-cmake
+	url = https://github.com/openssl/openssl.git
+[submodule "libs/stb"]
+	path = libs/stb
+	url = https://github.com/nothings/stb.git

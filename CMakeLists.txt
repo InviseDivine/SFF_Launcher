@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 file(GLOB SOURCES
     "src/*.cpp"
     "libs/imgui/*.cpp"
-    "libs/handler/*.cpp"
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
@@ -39,7 +38,7 @@ set(CMAKE_USE_WINSSL ON)
 add_subdirectory(libs/glfw)
 add_subdirectory(libs/glew/build/cmake)
 add_subdirectory(libs/curl)
-add_subdirectory(libs/bit7z-4.0.7)
+add_subdirectory(libs/bit7z)
 if (UNIX)
     find_package(OpenGL REQUIRED)
     set(GL_INCLUDES ${OPENGL_INCLUDE_DIRS})
@@ -59,6 +58,6 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     "libs/curl/include/"
     "libs/curl/include/"
     "include/openssl-cmake"
-    "libs/bit7z-4.0.7"
+    "libs/bit7z"
     ${GL_INCLUDES}
 )

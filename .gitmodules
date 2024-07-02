@@ -15,7 +15,7 @@
 	url = https://github.com/ocornut/imgui.git
 [submodule "libs/openssl-cmake"]
 	path = libs/openssl-cmake
-	url = https://github.com/openssl/openssl.git
+	url = https://github.com/viaduck/openssl-cmake.git
 [submodule "libs/stb"]
 	path = libs/stb
 	url = https://github.com/nothings/stb.git
